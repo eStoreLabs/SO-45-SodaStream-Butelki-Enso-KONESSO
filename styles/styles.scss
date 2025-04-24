@@ -105,7 +105,10 @@ $media-breakpoint-xl: 1200px;
 
   .es-kv {
     background-color: $color-bg;
-    padding: $px-XL $px-L;
+
+    &__left {
+      padding: $px-XL $px-L;
+    }
     &__logoCtn {
       max-width: 220px;
     }
@@ -129,6 +132,7 @@ $media-breakpoint-xl: 1200px;
     }
     &__packshot {
       margin-top: $px-XL;
+      padding-top: $px-XL;
       img {
         width: auto;
         max-height: 400px;
@@ -141,13 +145,14 @@ $media-breakpoint-xl: 1200px;
       background-image: none !important;
     }
   }
-
+  
   @media (min-width: $media-breakpoint-md) {
     .es-kv {
       display: flex;
+      justify-content: space-between;
       padding: 0;
       &__left {
-        padding: $px-XXL 0 $px-XXL 60px;
+        padding: $px-XXL 0 $px-XL 60px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -156,12 +161,13 @@ $media-breakpoint-xl: 1200px;
         background-image: none !important;
         margin-top: 0;
         margin-left: -100px;
-        padding: $px-XXL;
+        
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         img {
-          max-height: 500px;
+          max-height: 620px;
+          margin-bottom: -50px;
         }
       }
     }
@@ -172,6 +178,9 @@ $media-breakpoint-xl: 1200px;
       &__description {
         width: 90%;
         max-width: 450px;
+      }
+      &__packshot {
+        padding: $px-XXL calc(2 * $px-XXL) 0 0;
       }
     }
   }
