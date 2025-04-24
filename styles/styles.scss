@@ -35,7 +35,8 @@ $fw-regular: 400;
 $fw-bold: 700;
 
 $fs-base: 16px;
-$fs-header: 32px;
+$fs-header-mobile: 30px;
+$fs-header: 55px;
 
 @mixin text-main {
   font-family: $text-main;
@@ -47,9 +48,11 @@ $fs-header: 32px;
 
 @mixin text-section-header {
   font-family: $text-secondary;
-  font-size: $fs-header;
+  font-size: $fs-header-mobile;
   font-weight: $fw-bold;
-  color: $color-accent;
+  @media (min-width: $media-breakpoint-md) {
+    font-size: $fs-header;
+  }
 }
 
 $px-S: 8px;
@@ -100,7 +103,6 @@ $media-breakpoint-xl: 1200px;
   .es-section-title {
     @include text-section-header;
     text-align: center;
-    margin-block: $px-M;
   }
 
   .es-kv {
@@ -133,9 +135,133 @@ $media-breakpoint-xl: 1200px;
     &__packshot {
       margin-top: $px-XL;
       padding-top: $px-XL;
+      position: relative;
+      z-index: 1;
       img {
         width: auto;
         max-height: 400px;
+        margin-bottom: -50px;
+      }
+    }
+  }
+
+  .es-design {
+    padding: $px-XL;
+    background-color: $color-main;
+    color: $color-bg;
+    &__product {
+      margin-block: $px-XL;
+    }
+    &__description ::selection {
+      background-color: $color-accent;
+      color: $color-main;
+    }
+  }
+
+  .es-durable {
+    padding: $px-XL;
+    padding-bottom: 150px;
+    background-color: $color-main;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $px-XL;
+
+    ::selection {
+      background-color: $color-accent;
+      color: $color-main;
+    }
+
+    .es-section-title {
+      margin-block: 0;
+    }
+
+    &__left {
+      color: $color-accent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $px-XL;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    &__icon {
+      max-width: 216px;
+    }
+    &__description {
+      font-size: calc(2.0625 * $fs-base);
+    }
+    &__product img {
+      max-height: 400px;
+      width: auto;
+    }
+    &__right {
+      font-size: calc(1.375 * $fs-base);
+      ::selection {
+        background-color: $color-main;
+        color: $color-bg;
+      }
+    }
+  }
+
+  .es-compatible {
+    padding: $px-XXL $px-XL;
+    position: relative;
+    background-color: $color-main;
+    color: $color-bg;
+    .es-section-title {
+      color: $color-accent;
+    }
+    ::selection {
+      background-color: $color-accent;
+      color: $color-main;
+    }
+    &__icon {
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      top: -50px;
+      img {
+        max-width: 100px;
+      }
+    }
+
+    &__description {
+      text-align: center;
+      margin-top: $px-XL;
+    }
+  }
+
+  .es-features {
+    background-color: $color-accent;
+    padding: $px-XXL $px-XL;
+    color: $color-bg;
+    .es-section-title {
+      color: $color-main;
+    }
+    &__description {
+      text-align: center;
+      margin-block: $px-XL;
+    }
+    &__steps {
+      display: flex;
+      flex-direction: column;
+      gap: $px-XL;
+      margin-block: $px-XXL;
+    }
+    &__step {
+      display: flex;
+      flex-direction: column;
+      gap: $px-S;
+      text-wrap: balance;
+      &:nth-of-type(2) {
+        text-align: center;
+      }
+      &:nth-of-type(3) {
+        text-align: right;
       }
     }
   }
@@ -145,7 +271,7 @@ $media-breakpoint-xl: 1200px;
       background-image: none !important;
     }
   }
-  
+
   @media (min-width: $media-breakpoint-md) {
     .es-kv {
       display: flex;
@@ -161,13 +287,12 @@ $media-breakpoint-xl: 1200px;
         background-image: none !important;
         margin-top: 0;
         margin-left: -100px;
-        
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+
         img {
           max-height: 620px;
-          margin-bottom: -50px;
         }
       }
     }
