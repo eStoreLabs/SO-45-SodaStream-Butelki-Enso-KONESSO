@@ -1,20 +1,45 @@
+@font-face {
+  font-family: "Hurme-Black";
+  src: url("../fonts/HurmeGeometricSans3-Black.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Hurme-Bold";
+  src: url("../fonts/HurmeGeometricSans3-Bold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Hurme-Regular";
+  src: url("../fonts/HurmeGeometricSans3-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Hurme-Light";
+  src: url("../fonts/HurmeGeometricSans3-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
 #es-rc #es-rc-content {
-  font-family: "font-name", sans-serif;
+  font-family: "Hurme-Regular", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
-  color: #0d1116;
-  background-color: #f6f8fa;
+  color: #13294b;
+  color: #13294b;
+  background-color: #d9d8d6;
   max-width: 990px;
   margin: auto;
 }
 #es-rc #es-rc-content ::-moz-selection {
-  background-color: #69a7dd;
-  color: #fff;
+  background-color: #13294b;
+  color: #d9d8d6;
 }
 #es-rc #es-rc-content ::selection {
-  background-color: #69a7dd;
-  color: #fff;
+  background-color: #13294b;
+  color: #d9d8d6;
 }
 #es-rc #es-rc-content * {
   box-sizing: border-box;
@@ -31,37 +56,77 @@
   display: block;
 }
 #es-rc #es-rc-content .es-section-title {
-  font-family: "font-name", sans-serif;
+  font-family: "Hurme-Bold", sans-serif;
   font-size: 32px;
   font-weight: 700;
+  color: #8e7845;
   text-align: center;
   margin-block: 16px;
 }
 #es-rc #es-rc-content .es-kv {
-  background-color: #f6f8fa;
+  background-color: #d9d8d6;
+  padding: 32px 24px;
 }
-#es-rc #es-rc-content .es-kv__img--desktop {
-  display: none;
+#es-rc #es-rc-content .es-kv__logoCtn {
+  max-width: 220px;
+}
+#es-rc #es-rc-content .es-kv__logo {
+  max-width: 200px;
+}
+#es-rc #es-rc-content .es-kv__slogan {
+  font-size: 28px;
+  font-family: "Hurme-Bold", sans-serif;
+  color: #8e7845;
+  margin-top: 8px;
+}
+#es-rc #es-rc-content .es-kv__title {
+  font-size: 66px;
+  font-family: "Hurme-Bold", sans-serif;
+  color: #8e7845;
+  margin-block: 32px;
+}
+#es-rc #es-rc-content .es-kv__description {
+  font-size: 22px;
+}
+#es-rc #es-rc-content .es-kv__packshot {
+  margin-top: 32px;
+}
+#es-rc #es-rc-content .es-kv__packshot img {
+  width: auto;
+  max-height: 400px;
+}
+@media (max-width: 768px) {
+  #es-rc #es-rc-content .es-kv {
+    background-image: none !important;
+  }
 }
 @media (min-width: 768px) {
-  #es-rc #es-rc-content .es-kv__img--mobile {
-    display: none;
+  #es-rc #es-rc-content .es-kv {
+    display: flex;
+    padding: 0;
   }
-  #es-rc #es-rc-content .es-kv__img--desktop {
-    display: block;
+  #es-rc #es-rc-content .es-kv__left {
+    padding: 50px 0 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #es-rc #es-rc-content .es-kv__packshot {
+    background-image: none !important;
+    margin-top: 0;
+    margin-left: -100px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  #es-rc #es-rc-content .es-kv__packshot img {
+    max-height: 500px;
   }
 }
-#es-rc #es-rc-content .es-section {
-  margin-block: 16px;
-}
-#es-rc #es-rc-content .es-section__button {
-  background-color: #f6a255;
-  padding: 8px 16px;
-  cursor: pointer;
-  margin: auto;
-}
-@media (min-width: 768px) {
-  #es-rc #es-rc-content .es-section__button {
-    background-color: #69a7dd;
+@media (min-width: 992px) {
+  #es-rc #es-rc-content .es-kv__description {
+    width: 90%;
+    max-width: 450px;
   }
 }/*# sourceMappingURL=styles.css.map */

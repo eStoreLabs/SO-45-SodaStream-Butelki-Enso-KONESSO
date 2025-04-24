@@ -1,9 +1,35 @@
 @charset "UTF-8";
 
-// set up variables
+@font-face {
+  font-family: "Hurme-Black";
+  src: url("../fonts/HurmeGeometricSans3-Black.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
 
-$text-main: "font-name", sans-serif;
-$text-secondary: "font-name", sans-serif;
+@font-face {
+  font-family: "Hurme-Bold";
+  src: url("../fonts/HurmeGeometricSans3-Bold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hurme-Regular";
+  src: url("../fonts/HurmeGeometricSans3-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hurme-Light";
+  src: url("../fonts/HurmeGeometricSans3-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+$text-main: "Hurme-Regular", sans-serif;
+$text-secondary: "Hurme-Bold", sans-serif;
 
 $fw-regular: 400;
 $fw-bold: 700;
@@ -11,16 +37,30 @@ $fw-bold: 700;
 $fs-base: 16px;
 $fs-header: 32px;
 
+@mixin text-main {
+  font-family: $text-main;
+  font-size: $fs-base;
+  font-weight: $fw-regular;
+  line-height: 1.2;
+  color: $color-main;
+}
+
+@mixin text-section-header {
+  font-family: $text-secondary;
+  font-size: $fs-header;
+  font-weight: $fw-bold;
+  color: $color-accent;
+}
+
 $px-S: 8px;
 $px-M: 16px;
 $px-L: 24px;
 $px-XL: 32px;
-$px-XXL: 40px;
+$px-XXL: 50px;
 
-$color-main: #0d1116;
-$color-bg: #f6f8fa;
-$color-accent: #f6a255;
-$color-accent-2: #69a7dd;
+$color-main: #13294b;
+$color-bg: #d9d8d6;
+$color-accent: #8e7845;
 
 $media-breakpoint-sm: 576px;
 $media-breakpoint-md: 768px;
@@ -28,21 +68,16 @@ $media-breakpoint-lg: 992px;
 $media-breakpoint-xl: 1200px;
 
 #es-rc #es-rc-content {
-  font-family: $text-main;
-  font-size: $fs-base;
-  font-weight: $fw-regular;
-  line-height: 1.2;
+  @include text-main;
   color: $color-main;
   background-color: $color-bg;
-  max-width: 990px; //adjust, based on https://github.com/eStoreLabs/READ-ME/blob/main/DEVELOPMENT_GUIDELINES_FOR_GENERICS.md#2-styles
+  max-width: 990px;
   margin: auto;
 
   ::selection {
-    background-color: $color-accent-2;
-    color: #fff;
+    background-color: $color-main;
+    color: $color-bg;
   }
-
-  // minimal css reset
 
   * {
     box-sizing: border-box;
@@ -63,44 +98,81 @@ $media-breakpoint-xl: 1200px;
   }
 
   .es-section-title {
-    font-family: $text-secondary;
-    font-size: $fs-header;
-    font-weight: $fw-bold;
+    @include text-section-header;
     text-align: center;
     margin-block: $px-M;
   }
 
   .es-kv {
     background-color: $color-bg;
-    &__img {
-      &--desktop {
-        display: none;
+    padding: $px-XL $px-L;
+    &__logoCtn {
+      max-width: 220px;
+    }
+    &__logo {
+      max-width: 200px;
+    }
+    &__slogan {
+      font-size: calc(1.75 * $fs-base);
+      font-family: "Hurme-Bold", sans-serif;
+      color: $color-accent;
+      margin-top: $px-S;
+    }
+    &__title {
+      font-size: calc(4.125 * $fs-base);
+      font-family: "Hurme-Bold", sans-serif;
+      color: $color-accent;
+      margin-block: $px-XL;
+    }
+    &__description {
+      font-size: calc(1.375 * $fs-base);
+    }
+    &__packshot {
+      margin-top: $px-XL;
+      img {
+        width: auto;
+        max-height: 400px;
       }
-      @media (min-width: $media-breakpoint-md) {
-        &--mobile {
-          display: none;
-        }
-        &--desktop {
-          display: block;
+    }
+  }
+
+  @media (max-width: $media-breakpoint-md) {
+    .es-kv {
+      background-image: none !important;
+    }
+  }
+
+  @media (min-width: $media-breakpoint-md) {
+    .es-kv {
+      display: flex;
+      padding: 0;
+      &__left {
+        padding: $px-XXL 0 $px-XXL 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      &__packshot {
+        background-image: none !important;
+        margin-top: 0;
+        margin-left: -100px;
+        padding: $px-XXL;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        img {
+          max-height: 500px;
         }
       }
     }
   }
 
-  .es-section {
-    margin-block: $px-M;
-
-    &__button {
-      background-color: $color-accent;
-      padding: $px-S $px-M;
-      cursor: pointer;
-      margin: auto;
-
-      @media (min-width: $media-breakpoint-md) {
-        background-color: $color-accent-2;
+  @media (min-width: $media-breakpoint-lg) {
+    .es-kv {
+      &__description {
+        width: 90%;
+        max-width: 450px;
       }
     }
   }
-
-  // other sections
 }
