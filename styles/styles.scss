@@ -35,12 +35,12 @@ $fw-regular: 400;
 $fw-bold: 700;
 
 $fs-base: 16px;
-$fs-header-mobile: 30px;
+$fs-header-mobile: 32px;
 $fs-header: 55px;
 
 @mixin text-main {
   font-family: $text-main;
-  font-size: $fs-base;
+  font-size: calc(1.2 * $fs-base);
   font-weight: $fw-regular;
   line-height: 1.2;
   color: $color-main;
@@ -76,7 +76,7 @@ $media-breakpoint-xl: 1200px;
   background-color: $color-bg;
   max-width: 990px;
   margin: auto;
-
+  text-align: center;
   ::selection {
     background-color: $color-main;
     color: $color-bg;
@@ -107,30 +107,29 @@ $media-breakpoint-xl: 1200px;
 
   .es-kv {
     background-color: $color-bg;
-
+    text-align: center;
     &__left {
-      padding: $px-XL $px-L;
+      padding: $px-XL;
     }
     &__logoCtn {
       max-width: 220px;
+      margin: auto;
     }
     &__logo {
-      max-width: 200px;
+      max-width: 150px;
+      margin: auto;
     }
     &__slogan {
-      font-size: calc(1.75 * $fs-base);
+      font-size: calc(1.5 * $fs-base);
       font-family: "Hurme-Bold", sans-serif;
       color: $color-accent;
       margin-top: $px-S;
     }
     &__title {
-      font-size: calc(4.125 * $fs-base);
+      font-size: calc(3 * $fs-base);
       font-family: "Hurme-Bold", sans-serif;
       color: $color-accent;
       margin-block: $px-XL;
-    }
-    &__description {
-      font-size: calc(1.375 * $fs-base);
     }
     &__packshot {
       margin-top: $px-XL;
@@ -147,20 +146,27 @@ $media-breakpoint-xl: 1200px;
 
   .es-design {
     padding: $px-XL;
+    padding-right: 0;
     background-color: $color-main;
     color: $color-bg;
+    .es-section-title {
+      margin-block: 50px;
+    }
     &__product {
       margin-block: $px-XL;
     }
-    &__description ::selection {
-      background-color: $color-accent;
-      color: $color-main;
+    &__description {
+      padding-right: $px-XL;
+      ::selection {
+        background-color: $color-accent;
+        color: $color-main;
+      }
     }
   }
 
   .es-durable {
     padding: $px-XL;
-    padding-bottom: 150px;
+    padding-bottom: 90px;
     background-color: $color-main;
     text-align: center;
 
@@ -168,7 +174,6 @@ $media-breakpoint-xl: 1200px;
     flex-direction: column;
     align-items: center;
     gap: $px-XL;
-
     ::selection {
       background-color: $color-accent;
       color: $color-main;
@@ -177,7 +182,6 @@ $media-breakpoint-xl: 1200px;
     .es-section-title {
       margin-block: 0;
     }
-
     &__left {
       color: $color-accent;
       display: flex;
@@ -189,17 +193,17 @@ $media-breakpoint-xl: 1200px;
     }
 
     &__icon {
-      max-width: 216px;
+      max-width: 150px;
     }
     &__description {
-      font-size: calc(2.0625 * $fs-base);
+      font-size: calc(1.4 * $fs-base);
+      font-family: "Hurme-Bold";
     }
     &__product img {
       max-height: 400px;
       width: auto;
     }
     &__right {
-      font-size: calc(1.375 * $fs-base);
       ::selection {
         background-color: $color-main;
         color: $color-bg;
@@ -214,6 +218,7 @@ $media-breakpoint-xl: 1200px;
     color: $color-bg;
     .es-section-title {
       color: $color-accent;
+      margin-top: 32px;
     }
     ::selection {
       background-color: $color-accent;
@@ -236,33 +241,112 @@ $media-breakpoint-xl: 1200px;
   }
 
   .es-features {
-    background-color: $color-accent;
-    padding: $px-XXL $px-XL;
+    background-color: $color-main;
     color: $color-bg;
     .es-section-title {
       color: $color-main;
+      padding: $px-XL;
     }
     &__description {
-      text-align: center;
-      margin-block: $px-XL;
+      padding: $px-XL;
     }
-    &__steps {
+    &__steps--mobile {
       display: flex;
       flex-direction: column;
       gap: $px-XL;
-      margin-block: $px-XXL;
+      margin-top: $px-XXL;
+    }
+    &__steps--desktop {
+      display: none;
     }
     &__step {
       display: flex;
       flex-direction: column;
       gap: $px-S;
       text-wrap: balance;
+      overflow: hidden;
+      &:nth-of-type(1) {
+        text-align: left;
+        padding-right: $px-XL;
+        p {
+          padding-left: $px-XL;
+        }
+      }
       &:nth-of-type(2) {
         text-align: center;
+        padding-inline: $px-XL;
       }
       &:nth-of-type(3) {
         text-align: right;
+        padding-left: $px-XL;
+        p {
+          padding-right: $px-XL;
+        }
       }
+    }
+  }
+
+  .es-taste {
+    background-color: $color-main;
+    color: $color-bg;
+    padding-top: $px-XXL;
+    .es-section-title {
+      padding: $px-XL;
+    }
+    &__Ctn--mobile {
+      padding-block: $px-XL;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $px-L;
+    }
+    &__Ctn--desktop {
+      display: none;
+    }
+    &__single {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $px-M;
+      &:nth-of-type(1) {
+        padding-right: $px-XL;
+        img {
+          margin-left: 0;
+        }
+        p {
+          text-align: left;
+          padding-left: $px-XL;
+        }
+      }
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
+        padding-inline: $px-XL;
+      }
+      &:nth-of-type(4) {
+        padding-left: $px-XL;
+        img {
+          margin-right: 0;
+        }
+        p {
+          text-align: right;
+          padding-right: $px-XL;
+        }
+      }
+    }
+    &__title {
+      font-family: "Hurme-Bold";
+      font-size: calc(1.3 * $fs-base);
+      margin-bottom: $px-S;
+    }
+  }
+
+  .es-footer {
+    background-color: $color-main;
+    color: $color-bg;
+    padding: $px-XL;
+    hyphens: auto;
+    &__image {
+      margin-block: $px-XL;
     }
   }
 
@@ -283,6 +367,18 @@ $media-breakpoint-xl: 1200px;
         flex-direction: column;
         justify-content: space-between;
       }
+      &__logo {
+        max-width: 200px;
+      }
+      &__slogan {
+        font-size: calc(1.75 * $fs-base);
+      }
+      &__title {
+        font-size: calc(4.125 * $fs-base);
+      }
+      &__description {
+        font-size: calc(1.375 * $fs-base);
+      }
       &__packshot {
         background-image: none !important;
         margin-top: 0;
@@ -294,6 +390,14 @@ $media-breakpoint-xl: 1200px;
         img {
           max-height: 620px;
         }
+      }
+    }
+    .es-durable {
+      &__icon {
+        max-width: 216px;
+      }
+      &__description {
+        font-size: calc(2.0625 * $fs-base);
       }
     }
   }
