@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-@font-face {
-  font-family: "Hurme-Black";
-  src: url("../fonts/HurmeGeometricSans3-Black.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "Hurme-Black";
+//   src: url("../fonts/HurmeGeometricSans3-Black.woff") format("woff");
+//   font-weight: 600;
+//   font-style: normal;
+// }
 
 @font-face {
   font-family: "Hurme-Bold";
@@ -21,12 +21,12 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Hurme-Light";
-  src: url("../fonts/HurmeGeometricSans3-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: "Hurme-Light";
+//   src: url("../fonts/HurmeGeometricSans3-Light.woff2") format("woff2");
+//   font-weight: 300;
+//   font-style: normal;
+// }
 
 $text-main: "Hurme-Regular", sans-serif;
 $text-secondary: "Hurme-Bold", sans-serif;
@@ -121,13 +121,13 @@ $media-breakpoint-xl: 1200px;
     }
     &__slogan {
       font-size: calc(1.5 * $fs-base);
-      font-family: "Hurme-Bold", sans-serif;
+      font-family: $text-secondary;
       color: $color-accent;
       margin-top: $px-S;
     }
     &__title {
       font-size: calc(3 * $fs-base);
-      font-family: "Hurme-Bold", sans-serif;
+      font-family: $text-secondary;
       color: $color-accent;
       margin-block: $px-XL;
     }
@@ -197,7 +197,7 @@ $media-breakpoint-xl: 1200px;
     }
     &__description {
       font-size: calc(1.4 * $fs-base);
-      font-family: "Hurme-Bold";
+      font-family: $text-secondary;
     }
     &__product img {
       max-height: 400px;
@@ -268,7 +268,7 @@ $media-breakpoint-xl: 1200px;
       gap: $px-M;
 
       &--title {
-        font-family: "Hurme-Bold";
+        font-family: $text-secondary;
         font-size: calc(1.6 * $fs-base);
       }
     }
@@ -299,7 +299,7 @@ $media-breakpoint-xl: 1200px;
       gap: $px-M;
     }
     &__title {
-      font-family: "Hurme-Bold";
+      font-family: $text-secondary;
       font-size: calc(1.6 * $fs-base);
     }
   }
