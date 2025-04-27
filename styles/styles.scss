@@ -36,7 +36,8 @@ $fw-bold: 700;
 
 $fs-base: 16px;
 $fs-header-mobile: 32px;
-$fs-header: 55px;
+$fs-header: 40px;
+$fs-header-big: 55px;
 
 @mixin text-main {
   font-family: $text-main;
@@ -77,6 +78,7 @@ $media-breakpoint-xl: 1200px;
   max-width: 990px;
   margin: auto;
   text-align: center;
+
   ::selection {
     background-color: $color-main;
     color: $color-bg;
@@ -96,10 +98,6 @@ $media-breakpoint-xl: 1200px;
     margin: 0 auto;
   }
 
-  button {
-    display: block;
-  }
-
   .es-section-title {
     @include text-section-header;
     text-align: center;
@@ -107,7 +105,6 @@ $media-breakpoint-xl: 1200px;
 
   .es-kv {
     background-color: $color-bg;
-    text-align: center;
     &__left {
       padding: $px-XL;
     }
@@ -151,6 +148,7 @@ $media-breakpoint-xl: 1200px;
     color: $color-bg;
     .es-section-title {
       margin-block: 50px;
+      font-size: $fs-header-big;
     }
     &__product {
       margin-block: $px-XL;
@@ -174,6 +172,7 @@ $media-breakpoint-xl: 1200px;
     flex-direction: column;
     align-items: center;
     gap: $px-XL;
+
     ::selection {
       background-color: $color-accent;
       color: $color-main;
@@ -182,6 +181,11 @@ $media-breakpoint-xl: 1200px;
     .es-section-title {
       margin-block: 0;
     }
+
+    &__bg {
+      display: none;
+    }
+
     &__left {
       color: $color-accent;
       display: flex;
@@ -194,6 +198,14 @@ $media-breakpoint-xl: 1200px;
 
     &__icon {
       max-width: 150px;
+      margin: auto;
+      margin-bottom: $px-L;
+      &--d {
+        display: none;
+      }
+      &--m {
+        display: block;
+      }
     }
     &__description {
       font-size: calc(1.4 * $fs-base);
@@ -318,13 +330,15 @@ $media-breakpoint-xl: 1200px;
     }
   }
 
-  @media (max-width: $media-breakpoint-md) {
+  @media (max-width: calc($media-breakpoint-md - 1px)) {
     .es-kv {
       background-image: none !important;
     }
   }
 
   @media (min-width: $media-breakpoint-md) {
+    text-align: left;
+
     .es-kv {
       display: flex;
       justify-content: space-between;
@@ -334,6 +348,9 @@ $media-breakpoint-xl: 1200px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+      }
+      &__logoCtn {
+        margin: unset;
       }
       &__logo {
         max-width: 200px;
@@ -360,13 +377,124 @@ $media-breakpoint-xl: 1200px;
         }
       }
     }
+    .es-design {
+      padding: 32px 0 60px 60px;
+      &__description {
+        padding-right: 60px;
+      }
+    }
     .es-durable {
+      text-align: left;
+      flex-direction: row;
+      align-items: flex-end;
+      padding: 32px 60px 80px 60px;
+      background-image: none !important;
+      position: relative;
+      z-index: 0;
+      &__bg {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+      }
+      &__left {
+        justify-content: space-between;
+        height: 100%;
+      }
       &__icon {
-        max-width: 216px;
+        max-width: 130px;
+        margin-top: $px-XL;
+        margin-bottom: $px-L;
+        &--m {
+          display: none;
+        }
+        &--d {
+          display: block;
+        }
       }
       &__description {
-        font-size: calc(2.0625 * $fs-base);
+        font-size: calc(1.4 * $fs-base);
+        margin-right: -50px;
       }
+      &__product {
+        margin-left: -50px;
+      }
+      &__right {
+        align-self: center;
+        margin-left: -20px;
+        margin-top: 20px;
+      }
+    }
+    .es-compatible {
+      padding: 60px;
+      padding-top: 20px;
+      &__img {
+        margin-top: -75px;
+      }
+    }
+    .es-features {
+      .es-section-title {
+        padding: 60px 0 20px 0;
+      }
+      &__description {
+        padding: 32px 60px 60px 60px;
+        text-align: center;
+      }
+      &__steps {
+        flex-direction: row;
+        padding: 0 32px 60px 32px;
+        margin-top: -16px;
+        position: relative;
+      }
+      &__step {
+        &--title {
+          display: none;
+        }
+        &--2 {
+          margin-top: -48px;
+        }
+        &--3 {
+          margin-top: 28px;
+        }
+      }
+      &__arrow {
+        display: block;
+        position: absolute;
+        max-width: 50px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        &--1 {
+          left: 26%;
+          top: -11%;
+        }
+        &--2 {
+          left: 55%;
+          top: 43%;
+        }
+      }
+      overflow: hidden;
+      .es-triangle {
+        width: 0;
+        height: 0;
+        border-top: 120px solid transparent;
+        border-bottom: 0px solid transparent;
+        border-left: 1000px solid $color-main;
+      }
+    }
+    .es-taste {
+      .es-section-title {
+        padding: 20px 0 60px 0;
+        margin-top: -30px;
+      }
+      &__Ctn {
+        text-align: center;
+      }
+    }
+    .es-footer {
+      text-align: center;
+      padding: 60px;
     }
   }
 
@@ -378,6 +506,59 @@ $media-breakpoint-xl: 1200px;
       }
       &__packshot {
         padding: $px-XXL calc(2 * $px-XXL) 0 0;
+      }
+    }
+    .es-durable {
+      &__icon {
+        max-width: 216px;
+      }
+      &__description {
+        font-size: calc(2.0625 * $fs-base);
+      }
+    }
+    .es-taste {
+      &__desktop {
+        position: relative;
+        outline: 1px solid red;
+        height: 600px;
+      }
+      &__image {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 100%;
+      }
+      &__single {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        &:nth-of-type(1) {
+          outline: 1px solid orange;
+          top: 15%;
+          left: 26%;
+        }
+        &:nth-of-type(2) {
+          outline: 1px solid yellow;
+          top: unset;
+          left: 26%;
+          bottom: -14%;
+        }
+        &:nth-of-type(3) {
+          outline: 1px solid green;
+          left: unset;
+          top: 15%;
+          right: -25%;
+        }
+        &:nth-of-type(4) {
+          outline: 1px solid pink;
+          left: unset;
+          top: unset;
+          right: -25%;
+          bottom: -14%;
+        }
       }
     }
   }

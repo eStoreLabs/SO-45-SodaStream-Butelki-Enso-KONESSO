@@ -41,9 +41,6 @@
   display: block;
   margin: 0 auto;
 }
-#es-rc #es-rc-content button {
-  display: block;
-}
 #es-rc #es-rc-content .es-section-title {
   font-family: "Hurme-Bold", sans-serif;
   font-size: 32px;
@@ -52,12 +49,11 @@
 }
 @media (min-width: 768px) {
   #es-rc #es-rc-content .es-section-title {
-    font-size: 55px;
+    font-size: 40px;
   }
 }
 #es-rc #es-rc-content .es-kv {
   background-color: #d9d8d6;
-  text-align: center;
 }
 #es-rc #es-rc-content .es-kv__left {
   padding: 32px;
@@ -101,6 +97,7 @@
 }
 #es-rc #es-rc-content .es-design .es-section-title {
   margin-block: 50px;
+  font-size: 55px;
 }
 #es-rc #es-rc-content .es-design__product {
   margin-block: 32px;
@@ -137,6 +134,9 @@
 #es-rc #es-rc-content .es-durable .es-section-title {
   margin-block: 0;
 }
+#es-rc #es-rc-content .es-durable__bg {
+  display: none;
+}
 #es-rc #es-rc-content .es-durable__left {
   color: #8e7845;
   display: flex;
@@ -148,6 +148,14 @@
 }
 #es-rc #es-rc-content .es-durable__icon {
   max-width: 150px;
+  margin: auto;
+  margin-bottom: 24px;
+}
+#es-rc #es-rc-content .es-durable__icon--d {
+  display: none;
+}
+#es-rc #es-rc-content .es-durable__icon--m {
+  display: block;
 }
 #es-rc #es-rc-content .es-durable__description {
   font-size: 22.4px;
@@ -276,12 +284,15 @@
 #es-rc #es-rc-content .es-footer__image {
   margin-block: 32px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #es-rc #es-rc-content .es-kv {
     background-image: none !important;
   }
 }
 @media (min-width: 768px) {
+  #es-rc #es-rc-content {
+    text-align: left;
+  }
   #es-rc #es-rc-content .es-kv {
     display: flex;
     justify-content: space-between;
@@ -292,6 +303,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  #es-rc #es-rc-content .es-kv__logoCtn {
+    margin: unset;
   }
   #es-rc #es-rc-content .es-kv__logo {
     max-width: 200px;
@@ -316,11 +330,120 @@
   #es-rc #es-rc-content .es-kv__packshot img {
     max-height: 620px;
   }
+  #es-rc #es-rc-content .es-design {
+    padding: 32px 0 60px 60px;
+  }
+  #es-rc #es-rc-content .es-design__description {
+    padding-right: 60px;
+  }
+  #es-rc #es-rc-content .es-durable {
+    text-align: left;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 32px 60px 80px 60px;
+    background-image: none !important;
+    position: relative;
+    z-index: 0;
+  }
+  #es-rc #es-rc-content .es-durable__bg {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+  }
+  #es-rc #es-rc-content .es-durable__left {
+    justify-content: space-between;
+    height: 100%;
+  }
   #es-rc #es-rc-content .es-durable__icon {
-    max-width: 216px;
+    max-width: 130px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+  #es-rc #es-rc-content .es-durable__icon--m {
+    display: none;
+  }
+  #es-rc #es-rc-content .es-durable__icon--d {
+    display: block;
   }
   #es-rc #es-rc-content .es-durable__description {
-    font-size: 33px;
+    font-size: 22.4px;
+    margin-right: -50px;
+  }
+  #es-rc #es-rc-content .es-durable__product {
+    margin-left: -50px;
+  }
+  #es-rc #es-rc-content .es-durable__right {
+    align-self: center;
+    margin-left: -20px;
+    margin-top: 20px;
+  }
+  #es-rc #es-rc-content .es-compatible {
+    padding: 60px;
+    padding-top: 20px;
+  }
+  #es-rc #es-rc-content .es-compatible__img {
+    margin-top: -75px;
+  }
+  #es-rc #es-rc-content .es-features {
+    overflow: hidden;
+  }
+  #es-rc #es-rc-content .es-features .es-section-title {
+    padding: 60px 0 20px 0;
+  }
+  #es-rc #es-rc-content .es-features__description {
+    padding: 32px 60px 60px 60px;
+    text-align: center;
+  }
+  #es-rc #es-rc-content .es-features__steps {
+    flex-direction: row;
+    padding: 0 32px 60px 32px;
+    margin-top: -16px;
+    position: relative;
+  }
+  #es-rc #es-rc-content .es-features__step--title {
+    display: none;
+  }
+  #es-rc #es-rc-content .es-features__step--2 {
+    margin-top: -48px;
+  }
+  #es-rc #es-rc-content .es-features__step--3 {
+    margin-top: 28px;
+  }
+  #es-rc #es-rc-content .es-features__arrow {
+    display: block;
+    position: absolute;
+    max-width: 50px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  }
+  #es-rc #es-rc-content .es-features__arrow--1 {
+    left: 26%;
+    top: -11%;
+  }
+  #es-rc #es-rc-content .es-features__arrow--2 {
+    left: 55%;
+    top: 43%;
+  }
+  #es-rc #es-rc-content .es-features .es-triangle {
+    width: 0;
+    height: 0;
+    border-top: 120px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 1000px solid #13294b;
+  }
+  #es-rc #es-rc-content .es-taste .es-section-title {
+    padding: 20px 0 60px 0;
+    margin-top: -30px;
+  }
+  #es-rc #es-rc-content .es-taste__Ctn {
+    text-align: center;
+  }
+  #es-rc #es-rc-content .es-footer {
+    text-align: center;
+    padding: 60px;
   }
 }
 @media (min-width: 992px) {
@@ -330,5 +453,54 @@
   }
   #es-rc #es-rc-content .es-kv__packshot {
     padding: 50px 100px 0 0;
+  }
+  #es-rc #es-rc-content .es-durable__icon {
+    max-width: 216px;
+  }
+  #es-rc #es-rc-content .es-durable__description {
+    font-size: 33px;
+  }
+  #es-rc #es-rc-content .es-taste__desktop {
+    position: relative;
+    outline: 1px solid red;
+    height: 600px;
+  }
+  #es-rc #es-rc-content .es-taste__image {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+  }
+  #es-rc #es-rc-content .es-taste__single {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 50%;
+  }
+  #es-rc #es-rc-content .es-taste__single:nth-of-type(1) {
+    outline: 1px solid orange;
+    top: 15%;
+    left: 26%;
+  }
+  #es-rc #es-rc-content .es-taste__single:nth-of-type(2) {
+    outline: 1px solid yellow;
+    top: unset;
+    left: 26%;
+    bottom: -14%;
+  }
+  #es-rc #es-rc-content .es-taste__single:nth-of-type(3) {
+    outline: 1px solid green;
+    left: unset;
+    top: 15%;
+    right: -25%;
+  }
+  #es-rc #es-rc-content .es-taste__single:nth-of-type(4) {
+    outline: 1px solid pink;
+    left: unset;
+    top: unset;
+    right: -25%;
+    bottom: -14%;
   }
 }/*# sourceMappingURL=styles.css.map */
