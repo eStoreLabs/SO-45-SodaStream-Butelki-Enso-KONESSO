@@ -219,57 +219,46 @@
 #es-rc #es-rc-content .es-features__description {
   padding: 32px;
 }
-#es-rc #es-rc-content .es-features__steps--mobile {
+#es-rc #es-rc-content .es-features__arrow {
+  display: none;
+}
+#es-rc #es-rc-content .es-features__steps {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-top: 50px;
-}
-#es-rc #es-rc-content .es-features__steps--desktop {
-  display: none;
+  padding: 32px;
 }
 #es-rc #es-rc-content .es-features__step {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  text-wrap: balance;
-  overflow: hidden;
+  align-items: center;
+  gap: 16px;
 }
-#es-rc #es-rc-content .es-features__step:nth-of-type(1) {
-  text-align: left;
-  padding-right: 32px;
-}
-#es-rc #es-rc-content .es-features__step:nth-of-type(1) p {
-  padding-left: 32px;
-}
-#es-rc #es-rc-content .es-features__step:nth-of-type(2) {
-  text-align: center;
-  padding-inline: 32px;
-}
-#es-rc #es-rc-content .es-features__step:nth-of-type(3) {
-  text-align: right;
-  padding-left: 32px;
-}
-#es-rc #es-rc-content .es-features__step:nth-of-type(3) p {
-  padding-right: 32px;
+#es-rc #es-rc-content .es-features__step--title {
+  font-family: "Hurme-Bold";
+  font-size: 25.6px;
 }
 #es-rc #es-rc-content .es-taste {
   background-color: #13294b;
   color: #d9d8d6;
-  padding-top: 50px;
 }
 #es-rc #es-rc-content .es-taste .es-section-title {
   padding: 32px;
 }
-#es-rc #es-rc-content .es-taste__Ctn--mobile {
-  padding-block: 32px;
+#es-rc #es-rc-content .es-taste ::-moz-selection {
+  background-color: #8e7845;
+  color: #13294b;
+}
+#es-rc #es-rc-content .es-taste ::selection {
+  background-color: #8e7845;
+  color: #13294b;
+}
+#es-rc #es-rc-content .es-taste__Ctn {
+  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-}
-#es-rc #es-rc-content .es-taste__Ctn--desktop {
-  display: none;
 }
 #es-rc #es-rc-content .es-taste__single {
   display: flex;
@@ -277,33 +266,9 @@
   align-items: center;
   gap: 16px;
 }
-#es-rc #es-rc-content .es-taste__single:nth-of-type(1) {
-  padding-right: 32px;
-}
-#es-rc #es-rc-content .es-taste__single:nth-of-type(1) img {
-  margin-left: 0;
-}
-#es-rc #es-rc-content .es-taste__single:nth-of-type(1) p {
-  text-align: left;
-  padding-left: 32px;
-}
-#es-rc #es-rc-content .es-taste__single:nth-of-type(2), #es-rc #es-rc-content .es-taste__single:nth-of-type(3) {
-  padding-inline: 32px;
-}
-#es-rc #es-rc-content .es-taste__single:nth-of-type(4) {
-  padding-left: 32px;
-}
-#es-rc #es-rc-content .es-taste__single:nth-of-type(4) img {
-  margin-right: 0;
-}
-#es-rc #es-rc-content .es-taste__single:nth-of-type(4) p {
-  text-align: right;
-  padding-right: 32px;
-}
 #es-rc #es-rc-content .es-taste__title {
   font-family: "Hurme-Bold";
-  font-size: 20.8px;
-  margin-bottom: 8px;
+  font-size: 25.6px;
 }
 #es-rc #es-rc-content .es-footer {
   background-color: #13294b;
@@ -311,6 +276,14 @@
   padding: 32px;
   -webkit-hyphens: auto;
           hyphens: auto;
+}
+#es-rc #es-rc-content .es-footer ::-moz-selection {
+  background-color: #8e7845;
+  color: #13294b;
+}
+#es-rc #es-rc-content .es-footer ::selection {
+  background-color: #8e7845;
+  color: #13294b;
 }
 #es-rc #es-rc-content .es-footer__image {
   margin-block: 32px;
