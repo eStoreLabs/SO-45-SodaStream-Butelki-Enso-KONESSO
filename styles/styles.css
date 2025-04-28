@@ -98,6 +98,7 @@
 #es-rc #es-rc-content .es-design .es-section-title {
   margin-block: 50px;
   font-size: 55px;
+  padding-right: 32px;
 }
 #es-rc #es-rc-content .es-design__product {
   margin-block: 32px;
@@ -293,6 +294,11 @@
 }
 #es-rc #es-rc-content .es-footer__image {
   margin-block: 32px;
+}
+@media (max-width: 439px) {
+  #es-rc #es-rc-content .es-design .es-section-title {
+    font-size: 48px;
+  }
 }
 @media (max-width: 767px) {
   #es-rc #es-rc-content .es-kv {

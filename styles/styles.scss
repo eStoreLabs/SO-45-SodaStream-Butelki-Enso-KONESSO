@@ -52,6 +52,7 @@ $color-main: #13294b;
 $color-bg: #d9d8d6;
 $color-accent: #8e7845;
 
+$media-breakpoint-xs: 440px;
 $media-breakpoint-sm: 576px;
 $media-breakpoint-md: 768px;
 $media-breakpoint-lg: 992px;
@@ -137,6 +138,7 @@ $es-transition: all 0.3s ease-in-out;
     .es-section-title {
       margin-block: 50px;
       font-size: $fs-header-big;
+      padding-right: $px-XL;
     }
     &__product {
       margin-block: $px-XL;
@@ -327,7 +329,11 @@ $es-transition: all 0.3s ease-in-out;
       margin-block: $px-XL;
     }
   }
-
+  @media (max-width: calc($media-breakpoint-xs - 1px)) {
+    .es-design .es-section-title {
+      font-size: calc(1.5 * $fs-header-mobile);
+    }
+  }
   @media (max-width: calc($media-breakpoint-md - 1px)) {
     .es-kv {
       background-image: none !important;
